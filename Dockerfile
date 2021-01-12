@@ -9,7 +9,9 @@ RUN npm i better-sqlite3@5.4.2
 COPY package.json .
 COPY package-lock.json .
 
-RUN rm -rf /app/node_modules/chownr \ && npm i \ && mv ./node_modules/@types/jsonstream ./node_modules/@types/JSONStream
+RUN rm -rf /app/node_modules/chownr \
+    && npm i \
+    && mv ./node_modules/@types/jsonstream ./node_modules/@types/JSONStream
 
 FROM deps as frontend
 WORKDIR /app
